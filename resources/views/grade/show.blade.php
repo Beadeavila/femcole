@@ -6,12 +6,17 @@
 
 @section('content')
     <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
+        <div class="studentCard">
+
+            <img src="https://res.cloudinary.com/dog5ljnve/image/upload/v1675023061/logoFemCole_q4mump.png" alt="Paloma Babot" class="imageStudent">
+
+
+
+
+                <div class="cardFem">
+                    <div class="cardHeader">
                         <div class="float-left">
-                            <span class="card-title">Show Grade</span>
+                            <span class="cardTitle">Show Grade</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('grades.index') }}"> Back</a>

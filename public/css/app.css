@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+
+
+a.btn.btn-link{
+    color:#000000!important;
+    text-decoration:none!important;
+    font-size:12px;
+    font-family: 'Montserrat';
+    
+}
+
+main{
+    background: #E7E3EF;
+}
+
+button.navbar-toggler{
+    border:0!important;
+    position:relative;
+    top:-25px;
+    font-size:20px;
+}
+
+.boxForm{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+
+    }
+
+.cardFem{   
+    background: #E7E3EF!important;
+    border-color: #E7E3EF!important;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    
+    }
+
+    .cardTitle{
+        display:flex;
+        justify-content: center;
+        width:150px;
+        margin:0 auto 0 auto;
+        background: #AEA0D0;
+        color:#ffffff;
+        text-align:center;
+        font-family: 'Montserrat';
+        border-radius: 10px;
+        padding:7px 7px 7px 7px;
+        font-weight:normal;
+        font-size:18px;
+    }
+
+    .cardBody{
+        background: #E7E3EF;
+        border:0;
+        margin-top:30px;
+    }
+
+
+
+.form-group{
+    width:100%!important;
+    display: flex!important;
+    justify-content: center;
+    margin-bottom:10px;
+}
+
+.colLabel{
+    width:150px;
+    margin-right:10px;
+
+}
+
+.colInput{
+    width:40%;
+    
+}
+
+
+label{
+    width: 100%!important;
+    background: #AEA0D0;
+    color:#ffffff;
+    text-align:left!important;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    padding:10px 5px 10px 5px;
+    font-weight:normal;
+    font-size:13px;
+    
+}
+label.form-check-input{
+    background:transparent!important;
+    paddin:0!important;
+    color:#000000!important;
+
+}
+
+
+
+
+button[type=submit]{
+    width:70px;
+    background: #AEA0D0!important;
+    color:#ffffff;
+    text-align:center!important;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border:0;
+    padding:7px;
+    font-weight:normal;
+    font-size:13px;
+}
+
+
+
+.form-control{
+    width: 100%!important;
+    background: #ffffff;
+    border-radius: 10px;
+    padding:7px 7px 7px 7px;
+    color:#000000;
+    border:0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #f8fafc;
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem #AEA0D0!important;
+}
+
+input,select, button {
+    font-family: 'Montserrat'!important; 
+    font-size:13px;
+
+}
+
+
+
+.btnBox{
+display:flex;
+flex-direction: row;
+justify-content: center;
+
+}
+
+a button[type=submit].btnRegister{
+    width:130px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #AEA0D0;
+    padding:7px 7px 7px 7px;
+    margin:0 0 0 90%;
+    font-size:13px;
+    background-image: url("../img/plusIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 13px;;
+    background-size: 25px;
+
+}
+a button[type=submit].btnRegister:hover{
+    background: #6b2ff8;
+    background-image: url("../img/plusIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 13px;;
+    background-size: 25px;
+}
+
+
+a button[type=submit].btnLogin{
+    width:130px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #AEA0D0;
+    padding:7px 7px 7px 7px;
+    font-size:13px;
+}
+a button[type=submit].btnLogin:hover{
+    background: #6b2ff8;
+
+}
+
+
+a.btnForgot{
+    width:150px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #AEA0D0;
+    padding:7px 7px 7px 7px;
+    font-size:13px;
+    text-decoration:none;
+}
+a.btnForgot:hover{
+    background: #6b2ff8;
+    color:#ffffff;
+
+}
+
+a button[type=reset].btnCancel{
+    width:130px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #FF9C64;
+    font-size:13px;
+    padding:7px 7px 7px 7px;
+    margin:0 0 0 100%;
+    background-image: url("../img/backIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 20px;;
+    background-size: 25px;
+
+}
+
+a button[type=reset].btnCancel:hover{
+    background: #f66c1d;
+    background-image: url("../img/backIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 20px;;
+    background-size: 25px;
+}
+

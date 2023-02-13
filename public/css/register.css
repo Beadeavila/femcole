@@ -1,0 +1,189 @@
+
+
+
+.container{
+    background: #E7E3EF;
+    padding-top:30px;
+
+}
+
+.cardHeader{
+    background: #AEA0D0;
+    border-radius: 17px;
+    color:#ffffff;
+    font-family: 'Montserrat';
+    text-transform:uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 44px;
+    text-align:center;
+    width: 380px;
+    margin: 0 auto 30px auto;
+
+}
+
+.card{   
+    background: #E7E3EF;
+    border-color: #E7E3EF!important;
+    }
+
+
+form{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+
+    }
+
+
+.cardBody{
+    background: #E7E3EF;
+    border:0;
+  
+  
+}
+
+.colFormLabel{
+    background: #AEA0D0;
+    color:#ffffff;
+    text-align:left;
+    font-family: 'Montserrat';
+    border-radius: 13px;
+    padding:10px 0px 10px 0px;
+    font-weight:bold;
+    font-size:13px;
+    
+
+}
+input, button {
+    font-family: 'Montserrat'!important; 
+    font-size:13px;
+}
+
+input[type=text] {
+    width:100%;
+    background: #ffffff;
+    border-radius: 13px;
+    padding:10px 0px 10px 5px;
+    color:#000000;
+    border:0;
+
+}
+
+input[type=email] {
+    width:100%;
+    background: #ffffff;
+    border-radius: 13px;
+    padding:10px 0px 10px 5px;
+    color:#000000;
+    border:0;
+
+}
+
+a.input[type=password] {
+    width:100%;
+    background: #ffffff;
+    border-radius: 13px;
+    padding:10px 0px 10px 5px;
+    color:#000000;
+    border:0;
+
+}
+
+.btnBox{
+display:flex;
+flex-direction: row;
+justify-content: center;
+
+}
+
+a button[type=submit].btnRegister{
+    width:130px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #AEA0D0;
+    padding:10px 0px 10px 5px;
+    margin:0 0 0 90%;
+    font-size:13px;
+    background-image: url("../img/plusIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 13px;;
+    background-size: 25px;
+
+}
+a button[type=submit].btnRegister:hover{
+    background: #6b2ff8;
+    background-image: url("../img/plusIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 13px;;
+    background-size: 25px;
+}
+
+
+a button[type=submit].btnLogin{
+    width:130px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #AEA0D0;
+    padding:10px 0px 10px 5px;
+    font-size:13px;
+}
+a button[type=submit].btnLogin:hover{
+    background: #6b2ff8;
+
+}
+
+
+a.btnForgot{
+    width:150px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #AEA0D0;
+    padding:10px 0px 10px 5px;
+    font-size:13px;
+    text-decoration:none;
+}
+a.btnForgot:hover{
+    background: #6b2ff8;
+    color:#ffffff;
+
+}
+
+a button[type=reset].btnCancel{
+    width:130px;
+    border-radius: 13px;
+    color:#ffffff;
+    border:0;
+    background: #FF9C64;
+    font-size:13px;
+    padding:10px 0px 10px 5px;
+    margin:0 0 0 100%;
+    background-image: url("../img/backIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 20px;;
+    background-size: 25px;
+
+}
+
+a button[type=reset].btnCancel:hover{
+    background: #f66c1d;
+    background-image: url("../img/backIcon.png");
+    background-repeat: no-repeat;
+    background-position:left;
+    background-position-x: 20px;;
+    background-size: 25px;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #f8fafc;
+    outline: 0;
+    box-shadow: 0 0 0 0.05rem #AEA0D0!important;
+}

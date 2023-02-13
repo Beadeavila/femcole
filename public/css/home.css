@@ -1,0 +1,99 @@
+/* ___CSS BODY HOMEPAGE___ */
+.bodyApp {
+    background-color: #E7E3EF !important;
+}
+
+/* ___CSS HOME DISTRIBUTION___ */
+.homeContainer {
+    display: flex;
+}
+
+.buttonCotainer {
+    margin: 10px;
+    position: relative;
+    top: 50px;
+}
+
+.tableContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ___CSS TITLE___ */
+.listStudents {
+    /* position: relative; */
+    width: 450px;
+    height: 90px;
+    left: 492px;
+    top: auto;
+    background: #AEA0D0;
+    border-radius: 17px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* ___CSS ADD BUTTON___ */
+.addStudentButton {
+    background-color: #C7B8EA !important;
+    border-color: transparent !important;
+    width: auto;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-image: url("../img/add-user.png");
+    background-position: top;
+}
+
+.aAddButton {
+    text-decoration: none !important;
+}
+
+.textAddButton {
+    color: white !important;
+    font-size: 15px;
+    position: relative;
+    /* top: 10px; */
+    margin-top: 30px;
+}
+
+
+/* ___CSS TABLE___ */
+.tableHead {
+    background-color: #C7B8EA;
+}
+
+.tableTrimesters {
+    background-color:#3D73B2;
+    color: white;
+}
+
+/* .tableBody {
+    background-color: #C7B8EA;
+} */
+
+/* .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #D2CAE7;
+} */
+
+.tableHome {
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    border-color: transparent !important;
+    padding: 10px;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+    background-color: #C7B8EA;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: white;
+}

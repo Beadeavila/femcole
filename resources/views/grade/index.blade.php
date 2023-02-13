@@ -5,14 +5,14 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
+<section class="content container-fluid">
+    <div class="studentCard">
+        
+                <div class="cardFem">
+                    <div class="cardHeader">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
+                            <span id="card_title" class="cardTitle">
                                 {{ __('Grade') }}
                             </span>
 
@@ -29,30 +29,39 @@
                         </div>
                     @endif
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>User</th>
-										<th>Subject</th>
-										<th>Trimester</th>
-										<th>Exam</th>
-										<th>Grade</th>
-										<th>Schoolyear</th>
 
-                                        <th></th>
+@foreach ($grades as $grade)
+<p>
+{{ $grade->user->name }}
+</p>
+@endforeach
+
+
+
+                    <div class="allT">
+                        <table class="firstT box tableHome table-striped text-center">
+                                
+                                <thead class="tableHead">
+                                    <tr>
+                                        <td rowspan="2" class="align-middle"></td>
+                                        <td colspan="4">PRIMER TRIMESTRE</td>
+                    
+                                    </tr>
+                                    <tr class="tableNotes"> 
+                                        <td>Nota 1</td>
+                                        <td>Nota 2</td>
+                                        <td>Nota 3</td>
+                                        <td>Final</td>
+                    
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
                                     @foreach ($grades as $grade)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td>{{ ++$i }} {{ $grade->subject }}</td>
                                             
-											<td>{{ $grade->user->name }}</td>
-											<td>{{ $grade->subject }}</td>
+											
 											<td>{{ $grade->trimester }}</td>
 											<td>{{ $grade->exam }}</td>
 											<td>{{ $grade->grade }}</td>
@@ -70,12 +79,11 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
-                        </div>
+                    </table>
                     </div>
                 </div>
                 {!! $grades->links() !!}
-            </div>
+            
         </div>
     </div>
 @endsection

@@ -44,7 +44,7 @@
                                 <tbody>
                                     @foreach ($grades as $grade)
                                         <tr>
-                                            <td>{{ $grade->subject }}</td>
+                                            <td> {{ $grade->subject }}</td>
                                             
 											
 											<td>{{ $grade->trimester }}</td>

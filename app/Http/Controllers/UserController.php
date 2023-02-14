@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
+        $users = User::where('isAdmin','=', false)->paginate();
 
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
@@ -60,9 +60,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
+        $grades = $user->grades;
 
-        return view('user.show', compact('user'));
+        return view('user.show', compact('user', 'grades'));
     }
 
     /**

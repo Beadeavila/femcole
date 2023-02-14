@@ -28,10 +28,10 @@ class Grade extends Model
 
     static $rules = [
 		'user_id' => 'required',
+    'grade' => 'required',
 		'subject' => 'required',
 		'trimester' => 'required',
 		'exam' => 'required',
-		'grade' => 'required',
 		'schoolYear' => 'required',
     ];
 

@@ -17,6 +17,7 @@ class User extends Authenticatable
         'email' => 'required',
         'password' => 'required',
         'isAdmin' => 'required',
+        'image'
     ];
 
     /**
@@ -26,6 +27,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname1',
+        'surname2',
         'email',
         'password',
     ];
@@ -49,8 +52,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /* public function grade()
+    public function grades()
     {
-        return $this->hasMany('App\Models\Grade');
-    } */
+        return $this->hasMany('App\Models\Grade', 'user_id', 'id');
+    }
 }

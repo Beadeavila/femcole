@@ -1,0 +1,156 @@
+.studentCard{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: left;
+    
+}
+
+
+
+.infoStudent p{
+    margin:0px;
+    line-height: 25px;;
+    font-size:17px;
+    margin-left: 20px;
+    font-weight: 900;
+    position:relative;
+    top:20px;
+    
+}
+
+.imageStudent{
+    width: 150px;
+}
+
+.box{
+    width: 400px;
+}
+
+.allT{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    background: #E7E3EF;
+    position: relative;
+}
+
+
+
+
+
+
+.tableNotes{
+    background-color:#3D73B2;
+    color: white;
+}
+
+.finalNotes{
+    height: 30px;
+}
+
+.asignatures{
+    padding: 15px;
+}
+
+
+
+/* .addStudentButton {
+    background-color: #C7B8EA !important;
+    border-color: transparent !important;
+    width: auto;
+    height: 100px;
+    background-repeat: no-repeat;
+    image-rendering: url("../img/editar.png");
+    background-position: top;
+} */
+
+
+/* .buttom{
+    float: left;
+} */
+
+#main-conteiner{
+    width:100%;
+    display:flex;
+    padding-top: 10px;
+    text-align: justify;
+    justify-content: center;
+
+}
+
+
+/*EDIT BOTON*/
+.btnB{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    width: 100px;
+    height: 55px;
+}
+
+.btn-purpleB{
+    color: white;
+    background-color: #AEA0D0;
+}
+.btn-purpleB:hover{
+    background-color: #988cb5;
+}
+.btn-purpleB:active{
+    background-color: #7d7396;
+}
+
+
+/*BOTON ELIMINAR*/
+.btnD{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    width: 100px;
+    height: 55px;
+}
+
+.btn-purpleD{
+    color: white;
+    background-color: #AEA0D0;
+}
+.btn-purpleD:hover{
+    background-color: #988cb5;
+}
+.btn-purpleD:active{
+    background-color: #7d7396;
+}
+
+/*BOTON BACK HOME*/
+.btnA{
+    border-radius: 3px;
+    display: inline-block;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    width: 100px;
+    height: 55px;
+}
+
+.btn-purpleA{
+    color: white;
+    background-color: #ff9c64;
+}
+.btn-purpleA:hover{
+    background-color: #da8555;
+}
+.btn-purpleA:active{
+    background-color: #ad6d48;
+}
+

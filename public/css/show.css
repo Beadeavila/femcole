@@ -95,6 +95,53 @@
     height: 55px;
 }
 
+.buttonsCrud{
+    display:flex;
+    flex-direction: row;
+}
+
+
+.btnCrud{
+    width: 73px;
+    background: #d9cef4!important;
+    color: #ffffff;
+    text-align: center!important;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border: 0;
+    padding: 3px;
+    font-weight: normal;
+    font-size: 11px;
+    margin:5px;
+    text-decoration:none;
+  
+}
+
+
+
+a.green{
+    color:rgb(37, 115, 37)!important;
+}
+
+a.green:hover{
+    background:rgb(37, 115, 37)!important;
+    color:white!important;
+}
+
+a.blue{
+    color:blue!important;
+}
+
+a.blue:hover{
+    background:blue!important;
+    color:white!important;
+}
+
+a.red{
+    color:red!important;
+    
+}
+
 .btn-purpleB{
     color: white;
     background-color: #AEA0D0;

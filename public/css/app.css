@@ -92,27 +92,61 @@ label{
 }
 label.form-check-input{
     background:transparent!important;
-    paddin:0!important;
+    padding:0!important;
     color:#000000!important;
 
 }
 
 
-
-
 button[type=submit]{
     width:70px;
-    background: #AEA0D0!important;
-    color:#ffffff;
+    background: #d9cef4!important;
+    color:white;
     text-align:center!important;
     font-family: 'Montserrat';
     border-radius: 10px;
     border:0;
-    padding:7px;
+    padding:3px;
     font-weight:normal;
-    font-size:13px;
+    font-size:11px;
+    border:1px solid #AE9FCF;
 }
 
+button[type=submit].red{
+    width:70px;
+    background: #d9cef4!important;
+    color:red;
+    text-align:center!important;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border:0;
+    padding:3px;
+    font-weight:normal;
+    font-size:11px;
+ 
+}
+button[type=submit].red:hover{
+    background: red!important;
+    color:white;
+}
+
+button[type=submit].green{
+    width:70px;
+    background: #d9cef4!important;
+    color:rgb(37, 115, 37)!important;
+    text-align:center!important;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    border:0;
+    padding:3px;
+    font-weight:normal;
+    font-size:11px;
+ 
+}
+button[type=submit].green:hover{
+    background:rgb(37, 115, 37)!important;
+    color:white!important;
+}
 
 
 .form-control{
@@ -187,6 +221,8 @@ a button[type=submit].btnLogin:hover{
     background: #6b2ff8;
 
 }
+
+
 
 
 a.btnForgot{

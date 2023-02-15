@@ -3,6 +3,7 @@
     background-color: #E7E3EF !important;
 }
 
+
 /* ___CSS HOME DISTRIBUTION___ */
 .homeContainer {
     display: flex;
@@ -64,22 +65,19 @@
 
 
 /* ___CSS TABLE___ */
+
+
+
+
+
 .tableHead {
     background-color: #C7B8EA;
 }
 
 .tableTrimesters {
-    background-color:#3D73B2;
+    background-color:#3D73B2!important;
     color: white;
 }
-
-/* .tableBody {
-    background-color: #C7B8EA;
-} */
-
-/* .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-    background-color: #D2CAE7;
-} */
 
 .tableHome {
     border-collapse: separate;

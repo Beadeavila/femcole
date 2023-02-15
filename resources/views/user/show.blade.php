@@ -6,89 +6,66 @@
 
 @section('content')
 
-    <div class="studentCard">
-        <img src="{{$user->image}}" alt="Student's photo" class="imageStudent">
-        <div class="infoStudent">
+<div class="studentCard">
+    <img src="{{$user->image}}" alt="Student's photo" class="imageStudent">
+    <div class="infoStudent">
             <div>
-                <strong>Nombre y Apellidos:</strong>
-                {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}
+            <strong>Nombre y Apellidos:</strong>
+            {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}
             </div>
             <div>
-                <strong>Curso: </strong>
-                {{-- {{ $grades->schoolYear }} --}}
+            <strong>Curso: </strong>
+            {{-- {{ $grades->schoolYear }} --}}
             </div>
             <div>
-                <strong>Email:</strong>
-                {{ $user->email }}
+            <strong>Email:</strong>
+            {{ $user->email }}
             </div>
-        </div>
     </div>
+</div>
                         
-        <h2>Calificaciones de {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}</h2>
+    <h2>Calificaciones de {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}</h2>
 
-            <div class="allT">
-                    <table class="firstT box table-striped text-center">
-                        <thead>
-                            <tr>
-                                <td rowspan="2" class="align-middle"></td>
-                                <td colspan="4">PRIMER TRIMESTRE</td>
-                            </tr>
-                            <tr class="tableNotes">
-                                <td>Nota 1</td>
-                                <td>Nota 2</td>
-                                <td>Nota 3</td>
-                                <td>Final</td>
-                            </tr>
-                        </thead>
-                        @if(count($grades) > 0)
-                        <tbody>
-                        @foreach($grades as $grade)
-                            <tr>
-                                @switch($grade->subject)
-                                    @case('Inglés')
-                                        {{ $grade->subject }}
+<div class="allT">
 
-                                        @switch($grade->exam)
-                                            @case('1')
-                                                <td>{{ $grade->grade }}</td>
-                                            @break
-
-                                            @case('2')
-                                                <td>{{ $grade->grade }}</td>
-                                            @break
-
-                                            @case('3')
-                                                <td>{{ $grade->grade }}</td>
-                                            @break
-                                        @endswitch
-                                    @break
-                                @endswitch
-                            </tr>
-                            <tr>Donde estoy</tr>
+	@foreach(range(1, 3) as $trimester)
+    <table class="table tableHome table-striped text-center">
+        <thead class="tableHead">
+            <tr>
+                <th colspan="{{ count($grades->pluck('exam')->unique()) + 1 }}">
+                    Trimester {{ $trimester }}
+                </th>
+            </tr>
+            <tr>
+                <th>Asignatura</th>
+                <th class="tableTrimesters">1 Nota</th>
+                @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
+                    <th class="tableTrimesters">{{ $exam }} Nota</th>
+                @endforeach
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
+                <tr>
+                    <td>{{ $subject }}</td>
+                    <td>
+                        @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
+                            {{ $grade->grade }}
                         @endforeach
-                        </tbody>
-                    </table>
-                
-                </div>
-                @else
-                <p>No hay calificaciones registradas para este usuario.</p>
-                @endif
-            </div>
-            
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">Show User</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </td>
+                    @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
+                        <td>
+                            @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
+                                {{ $grade->grade }}
+                            @endforeach
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endforeach
+
+
+</section>
 @endsection

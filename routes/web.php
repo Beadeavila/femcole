@@ -24,3 +24,6 @@ Route::resource('users', App\Http\Controllers\UserController::class)->middleware
 Route::resource('grades', App\Http\Controllers\GradeController::class)->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::post('/upload', 'UserController@upload')->name('user.upload');

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Models\Grade;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 /**
  * Class UserController
@@ -47,7 +48,11 @@ class UserController extends Controller
         request()->validate(User::$rules);
 
         $user = User::create($request->all());
-
+        $image = $request->file('image');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $image->storeAs('public/images', $imageName);
+        $user->image = 'public/images/' . $imageName;
+        $user->save();
         return redirect()->route('users.index')
             ->with('success', 'User created successfully.');
     }
@@ -108,4 +113,17 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with('success', 'User deleted successfully');
     }
+
+
+    public function upload(Request $request)
+{
+    $file = $request->file('file');
+
+    $filename = time() . '_' . $file->getClientOriginalName();
+
+    $file->move(public_path('uploads'), $filename);
+
+    return response()->json(['filename' => $filename]);
+}
+
 }

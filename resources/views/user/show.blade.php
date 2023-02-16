@@ -7,7 +7,8 @@
 @section('content')
 
 <div class="studentCard">
-    <img src="{{$user->image}}" alt="Student's photo" class="imageStudent">
+    <img src="{{ asset($user->image) }}" alt="{{ $user->name }}" class="imageStudent">
+
     <div class="infoStudent">
             <div>
             <strong>Nombre y Apellidos:</strong>

@@ -28,9 +28,10 @@
         </div>
         <div class="form-group">
             {{ Form::label('image') }}
-            {{ Form::text('image', $user->image, ['class' => 'form-control' . ($errors->has('image') ? ' is-invalid' : ''), 'placeholder' => 'image']) }}
+            {{ Form::file('image', ['class' => 'form-control' . ($errors->has('image') ? ' is-invalid' : ''), 'accept' => 'image/*']) }}
             {!! $errors->first('image', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        
         <div class="form-group">
             {{ Form::label('isAdmin') }}
             {{ Form::text('isAdmin', $user->isAdmin, ['class' => 'form-control' . ($errors->has('isAdmin') ? ' is-invalid' : ''), 'placeholder' => 'Isadmin']) }}

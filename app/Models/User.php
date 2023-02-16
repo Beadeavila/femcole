@@ -18,8 +18,8 @@ class User extends Authenticatable
         'surname2' => 'required',
         'email' => 'required',
         'password' => 'required',
+        'image' => 'required|image|max:2048',
         'isAdmin' => 'required',
-        'image' => 'required',
     ];
 
     /**

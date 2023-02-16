@@ -30,7 +30,7 @@
                         
     <h2>Calificaciones de {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}</h2>
 
-<div class="allT">
+{{-- <div class="allT">
 
 	@foreach(range(1, 3) as $trimester)
     <table class="table tableHome table-striped text-center">
@@ -68,11 +68,10 @@
             @endforeach
         </tbody>
     </table>
-@endforeach
+@endforeach --}}
 
 
-</section>
-@endsection
+
 
 
 {{-- Codigo LAIA --}}
@@ -114,12 +113,15 @@
                         @php
                             $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
                             $grades_count = $subjectGrades->where('trimester', $trimester)->count();
-                            $media = $grades_count ? round($grades_sum / $grades_count, 2) : 0;
+                            $average = $grades_count ? round($grades_sum / $grades_count, 2) : 0;
                         @endphp
-                        {{ $media }}
+                        {{ $average }}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 @endforeach
+
+</section>
+@endsection

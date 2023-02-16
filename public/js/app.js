@@ -1,6 +1,6 @@
   // Initialize Dropzone
     var myDropzone = new Dropzone("form", {
-        url: "{{ route('user.upload') }}", // replace with your image upload URL
+        url: "{{ route('upload') }}", // replace with your image upload URL
         paramName: "image",
         addRemoveLinks: true,
         dictDefaultMessage: "Drag and drop an image here or click to upload",

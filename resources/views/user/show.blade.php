@@ -74,3 +74,52 @@
 </section>
 @endsection
 
+
+{{-- Codigo LAIA --}}
+
+@foreach(range(1, 3) as $trimester)
+    <table class="table tableHome table-striped text-center">
+        <thead class="tableHead">
+            <tr>
+                <th colspan="{{ count($grades->pluck('exam')->unique()) + 2 }}">
+                    Trimester {{ $trimester }}
+                </th>
+            </tr>
+            <tr>
+                <th>Asignatura</th>
+                <th class="tableTrimesters">1 Nota</th>
+                @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
+                    <th class="tableTrimesters">{{ $exam }} Nota</th>
+                @endforeach
+                <th class="tableTrimesters">Media</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
+                <tr>
+                    <td>{{ $subject }}</td>
+                    <td>
+                        @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
+                            {{ $grade->grade }}
+                        @endforeach
+                    </td>
+                    @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
+                        <td>
+                            @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
+                                {{ $grade->grade }}
+                            @endforeach
+                        </td>
+                    @endforeach
+                    <td>
+                        @php
+                            $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
+                            $grades_count = $subjectGrades->where('trimester', $trimester)->count();
+                            $media = $grades_count ? round($grades_sum / $grades_count, 2) : 0;
+                        @endphp
+                        {{ $media }}
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endforeach

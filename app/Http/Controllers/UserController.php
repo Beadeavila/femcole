@@ -51,7 +51,7 @@ class UserController extends Controller
         $image = $request->file('image');
         $imageName = time() . '_' . $image->getClientOriginalName();
         $image->storeAs('public/images', $imageName);
-        $user->image = 'public/images/' . $imageName;
+        $user->image = 'storage/images/' . $imageName;
         $user->save();
         return redirect()->route('users.index')
             ->with('success', 'User created successfully.');

@@ -5,9 +5,12 @@
 @endsection
 
 @section('content')
-
+@php
+    use Illuminate\Support\Facades\Storage;
+@endphp
 <div class="studentCard">
-    <img src="{{ asset($user->image) }}" alt="{{ $user->name }}" class="imageStudent">
+    <img src="{{ Storage::url($user->image) }}" alt="{{ $user->name }}" class="imageStudent">
+
 
     <div class="infoStudent">
             <div>

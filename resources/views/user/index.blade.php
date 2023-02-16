@@ -7,7 +7,7 @@
 @section('content')
 <div class="homeContainer">
     <div class="buttonCotainer">
-            <a class="aAddButton" href="{{ route('register') }}">
+            <a class="aAddButton" href="{{ route('users.create') }}">
                 <button class="addStudentButton btn btn-primary">
                     <div class="textAddButton">AÑADIR ALUMNO</div>
                 </button>

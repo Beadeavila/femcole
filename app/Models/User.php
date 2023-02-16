@@ -14,10 +14,12 @@ class User extends Authenticatable
 
     static $rules = [
 		'name' => 'required',
+        'surname1' => 'required',
+        'surname2' => 'required',
         'email' => 'required',
         'password' => 'required',
         'isAdmin' => 'required',
-        'image'
+        'image' => 'required',
     ];
 
     /**

@@ -5,6 +5,17 @@
 @endsection
 
 @section('content')
+
+<div class="homeContainer">
+    <div class="buttonCotainer">
+        <a href="{{ route('grades.create') }}" class="addStudentButton btn btn-primary"  data-placement="left">
+            {{ __('Create New') }}
+        </a>
+    </div>
+
+
+
+
 <section class="content container-fluid">
     <div class="studentCard">
         
@@ -16,11 +27,7 @@
                                 {{ __('Grade') }}
                             </span>
 
-                            <div class="float-right">
-                            <a href="{{ route('grades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                {{ __('Create New') }}
-                            </a>
-                            </div>
+                
                     </div>
                     </div>
                     @if ($message = Session::get('success'))

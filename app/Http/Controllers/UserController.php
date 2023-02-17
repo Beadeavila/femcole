@@ -18,13 +18,46 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function isAdmin()
+{
+    return auth()->user()->isAdmin;
+}
+
+
+    //...
+
     public function index()
     {
-        $users = User::where('isAdmin','=', false)->paginate();
-
-        return view('user.index', compact('users'))
-            ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
+        if ($this->isAdmin()) {
+            $users = User::where('isAdmin','=', false)->paginate();
+            return view('user.index', compact('users'))
+                ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
+        } else {
+            return redirect()->route('users.show', [auth()->id()]);
+        }
     }
+    
+    
+    public function show($id)
+    {
+        if ($this->isAdmin()) {
+            $user = User::findOrFail($id);
+            $grades = $user->grades;
+    
+            return view('user.show', compact('user', 'grades'));
+        } else {
+            $user = User::findOrFail($id);
+            $grades = $user->grades;
+            return view('user.show', compact('user', 'grades'));
+        }
+    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -57,22 +90,7 @@ class UserController extends Controller
             ->with('success', 'User created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $user = User::findOrFail($id);
-        $grades = $user->grades;
-        /* $average = $grades->groupBy(['subject', 'trimester'])->map(function ($grades) {
-            return $grades->avg('grade');
-        }); */
 
-        return view('user.show', compact('user', 'grades'));
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -128,5 +146,8 @@ class UserController extends Controller
 
     return response()->json(['filename' => $filename]);
 }
+
+
+
 
 }

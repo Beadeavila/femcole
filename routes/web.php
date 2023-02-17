@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(); 
 
 Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::resource('grades', App\Http\Controllers\GradeController::class)->middleware('auth');

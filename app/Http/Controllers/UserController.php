@@ -67,6 +67,9 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $grades = $user->grades;
+        /* $average = $grades->groupBy(['subject', 'trimester'])->map(function ($grades) {
+            return $grades->avg('grade');
+        }); */
 
         return view('user.show', compact('user', 'grades'));
     }

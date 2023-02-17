@@ -16,13 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
         User::factory()->create(['name' => 'Paloma', 'surname1' => 'Babot', 'surname2' => 'León', 'email' => 'palo@gmail.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Ana', 'surname1' => 'Rueda', 'surname2' => 'Guiu', 'email' => 'michi@gmail.com', 'isAdmin' => false]);
@@ -30,8 +23,6 @@ class DatabaseSeeder extends Seeder
         User::factory()->create(['name' => 'Beatriz', 'surname1' => 'De Ávila', 'surname2' => 'Jiménez', 'email' => 'bea@gmail.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Adriana', 'surname1' => 'Aguilar', 'surname2' => 'Ruiz', 'email' => 'adri@gmail.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Paula', 'surname1' => 'Ramírez', 'surname2' => 'Agudelo', 'email' => 'paula@gmail.com', 'isAdmin' => false]);
-
-
     
         // Recorrer todos los usuarios creados
         User::all()->each(function ($user) {

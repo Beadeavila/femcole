@@ -35,7 +35,7 @@ class UserController extends Controller
     public function index()
     {
         if ($this->isAdmin()) {
-            $users = User::paginate();
+            $users = User::where('isAdmin','=', false)->paginate();
             return view('user.index', compact('users'))
                 ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
         } else {

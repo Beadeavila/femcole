@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
                     for ($exam = 1; $exam <= 3; $exam++) {
                         Grade::factory()->create([
                             'user_id' => $user->id,
-                            'grade' => rand(5, 10),
+                            'grade' => rand(1, 10),
                             'subject' => $subject,
                             'trimester' => $trimester,
                             'exam' => $exam,

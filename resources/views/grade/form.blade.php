@@ -10,7 +10,7 @@
         <div class="form-group">
             {{ Form::label('asignatura') }}
             {{ Form::select('subject',['lengua'=>'Lengua','inglés'=>'Inglés','matemáticas'=>'Matemáticas', 'historia'=>'Historia' ,'geografía'=>'Geografía'], $grade->subject, ['class' => 'form-control' . ($errors->has('subject') ? ' is-invalid' : ''), 'placeholder' => 'Asignatura']) }}
-            {!! $errors->first('subject', '<div class="invalid-feedback">:message</div>') !!}
+            {!! $errors->first('subject', '<div class="invalid-feedback">:message</div>') !!} 
         </div>
         <div class="form-group">
             {{ Form::label('trimestre') }}

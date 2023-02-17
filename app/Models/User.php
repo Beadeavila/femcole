@@ -59,3 +59,4 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Grade', 'user_id', 'id');
     }
 }
+

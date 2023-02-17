@@ -18,7 +18,7 @@
                                 {{ __('Create New') }}
                                 </a> --}}
         
-                    @if ($message = Session::get('success'))
+                    @if ($message = Session::get('success')) 
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
                         </div> 

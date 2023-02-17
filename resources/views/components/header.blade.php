@@ -17,10 +17,10 @@
                 @if(Auth::check())
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+                        <a class="nav-link" href="{{ route('users.index') }}">{{ __('Estudiantes') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('grades.index') }}">{{ __('Grades') }}</a>
+                        <a class="nav-link" href="{{ route('grades.index') }}">{{ __('Notas') }}</a>
                     </li>
                 </ul>
                 @endif

@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::redirect('/', 'login');
+
 Auth::routes(); 
 
 Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');

@@ -112,8 +112,8 @@
                     <td>
                         @php
                             $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
-                            $grades_count = $subjectGrades->where('trimester', $trimester)->count();
-                            $average = $grades_count ? round($grades_sum / $grades_count, 2) : 0;
+                            /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
+                            $average = $grades_sum ? round($grades_sum / 3, 0) : 0;
                         @endphp
                         {{ $average }}
                     </td>

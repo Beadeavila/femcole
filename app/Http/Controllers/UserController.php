@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class UserController
@@ -21,6 +22,15 @@ class UserController extends Controller
     public function index()
     {
         $users = User::where('isAdmin','=', false)->paginate();
+
+        if (Auth::user()->isAdmin) {
+            // Si es administrador, mostrar todos los usuarios
+            $users = User::all();
+            return view('home', compact('users'));
+        } else {
+            // Si no es administrador, redirigir a la página de inicio
+            return redirect()->route('home')->with('error', 'No tienes permisos de administrador para ver la lista de usuarios.');
+        }
 
         return view('user.index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());

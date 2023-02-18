@@ -114,9 +114,14 @@
     font-size: 11px;
     margin:5px;
     text-decoration:none;
-  
+
 }
 
+.white{
+    color:white;
+    font-size:25px;
+    font-weight:bold;
+}
 
 
 a.green{

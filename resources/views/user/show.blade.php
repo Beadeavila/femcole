@@ -30,7 +30,7 @@
                         
     <h2>Calificaciones de {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}</h2>
 
-{{-- <div class="allT">
+<div class="allT">
 
 	@foreach(range(1, 3) as $trimester)
     <table class="table tableHome table-striped text-center">
@@ -68,7 +68,7 @@
             @endforeach
         </tbody>
     </table>
-@endforeach --}}
+@endforeach
 
 
 
@@ -76,7 +76,7 @@
 
 {{-- Codigo LAIA --}}
 
-@foreach(range(1, 3) as $trimester)
+{{-- @foreach(range(1, 3) as $trimester)
     <table class="table tableHome table-striped text-center">
         <thead class="tableHead">
             <tr>
@@ -121,7 +121,7 @@
             @endforeach
         </tbody>
     </table>
-@endforeach
+@endforeach --}}
 
 </section>
 @endsection

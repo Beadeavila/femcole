@@ -34,31 +34,25 @@ class UserController extends Controller
 
     public function index()
     {
-        if ($this->isAdmin()) {
-            $users = User::where('isAdmin','=', false)->paginate();
+        if (auth()->user()->isAdmin) {
+            $users = User::where('isAdmin', false)->paginate();
             return view('user.index', compact('users'))
                 ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
         } else {
             return redirect()->route('users.show', [auth()->id()]);
         }
     }
-    
-    
+
     public function show($id)
     {
-        if ($this->isAdmin()) {
-            $user = User::findOrFail($id);
+        $user = User::findOrFail($id);
+        if (auth()->user()->isAdmin || $user->id === auth()->id()) {
             $grades = $user->grades;
-    
             return view('user.show', compact('user', 'grades'));
         } else {
-            $user = User::findOrFail($id);
-            $grades = $user->grades;
-            return view('user.show', compact('user', 'grades'));
+            abort(403);
         }
     }
-    
-
     /**
      * Show the form for creating a new resource.
      *

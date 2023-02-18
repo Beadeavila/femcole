@@ -11,12 +11,37 @@
 
 .paginationFem nav{
     width:100%;
+    text-align:center;
 }
 
+.paginationFem nav span{
+    color:#6b2ff8;
+
+}
+
+.paginationFem nav a{
+    color:#ffffff!important;
+    text-decoration:none;
+  
+  }
+  .paginationFem nav a:hover{
+    color:#6b2ff8!important;
+    text-decoration:none;
+    background-color:#ffffff!important;
+  
+  }
+
+.paginationFem .px-4 {
+    color:#ffffff!important;
+}
+
+.paginationFem .bg-white{
+    background-color:#9d78f3!important;
+    padding: 7px!important;   
+}
 
 .paginationFem nav svg{
-    width:20px;
-    border:1px solid red;
+    width:25px!important;
 }
 
 a.btn.btn-link{

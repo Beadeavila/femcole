@@ -42,6 +42,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Añadir Alumno</button>
+        <button type="submit" class="btn btn-primary">Añadir Estudiante</button>
     </div>
 </div>

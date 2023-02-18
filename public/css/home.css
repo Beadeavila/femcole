@@ -9,7 +9,7 @@
     display: flex;
 }
 
-.buttonCotainer {
+.buttonContainer {
     margin: 10px;
     position: relative;
     top: 50px;
@@ -51,7 +51,7 @@
     background-position: top;
 }
 
-.aAddButton {
+.addButton {
     text-decoration: none !important;
 }
 

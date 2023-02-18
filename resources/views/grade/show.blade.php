@@ -49,18 +49,38 @@
                             {{ $grade->schoolYear }}
                         </div>
                     </div> --}}
+                {{-- <table>
+                    <thead class="tableHead">
+                        <tr>
+                            <th>Evaluación Final</th>
+                            <th>Asignatura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($finalAverages as $subject => $trimesterAverages)
+                        <tr>
+                            <td>{{ $subject }}</td>
+                            @foreach ($trimesters as $trimester)
+                                <td>{{$trimesterAverages[$trimester]}}</td>
+                            @endforeach
+                            <td>{{ round(array_sum($trimesterAverages) / 3, 0) }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table> --}}
+
                 <div class="allT">
                     <table class="firstT box table-striped text-center">
                         <thead>
                             <tr>
                                 <td rowspan="2" class="align-middle"></td>
-                                <td colspan="4">PRIMER TRIMESTRE</td>
+                                <td colspan="4">TRIMESTRE</td>
                             </tr>
                             <tr class="tableNotes">
-                                <td>Nota 1</td>
-                                <td>Nota 2</td>
-                                <td>Nota 3</td>
-                                <td>Final</td>
+                                <td>Nota Examen 1</td>
+                                <td>Nota Examen 2</td>
+                                <td>Nota Examen 3</td>
+                                <td>Media trimestral</td>
                             </tr>
                         </thead>
                         <tbody>

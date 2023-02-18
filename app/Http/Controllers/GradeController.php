@@ -65,6 +65,7 @@ class GradeController extends Controller
         $grade = Grade::find($id);
 
         return view('grade.show', compact('user', 'grade'));
+
     }
 
     /**
@@ -109,4 +110,69 @@ class GradeController extends Controller
         return redirect()->route('grades.index')
             ->with('success', 'Grade deleted successfully');
     }
+
+/*     public function calculateAveragesBySubjectAndTrimester()
+{
+    $subjects = Grade::select('subject')->distinct()->get();
+
+    $averages = [];
+    foreach ($subjects as $subject) {
+        for ($trimester = 1; $trimester <= 3; $trimester++) {
+            $grades = Grade::where('subject', $subject->subject)
+                ->where('trimester', $trimester)
+                ->whereIn('exam', [1, 2, 3])
+                ->pluck('grade');
+            $average = round($grades->average(), 0);
+            $averages[] = [
+                'subject' => $subject->subject,
+                'trimester' => $trimester,
+                'average' => $average
+            ];
+        }
+    }
+
+    return $averages;
+}
+
+public function showGradesByExamTrimesterSubject($exam, $trimester, $subject)
+{
+    $grades = Grade::where('exam', $exam)
+                    ->where('trimester', $trimester)
+                    ->where('subject', $subject)
+                    ->get();
+
+    $averages = $grades->groupBy(['subject', 'trimester', 'exam'])
+                        ->map(function ($subjectGrades) {
+                            $gradesSum = $subjectGrades->sum('grade');
+                            $average = $gradesSum ? round($gradesSum / 3, 0) : 0;
+                            return $average;
+                        });
+
+    return view('user.show', compact('averages', 'exam', 'trimester', 'subject'));
+}
+
+
+public function finalEvaluationBySubject()
+{
+    $subjects = Grade::select('subject')
+                        ->groupBy('subject')
+                        ->get();
+
+    $finalEvaluations = [];
+
+    foreach ($subjects as $subject) {
+        $trimester1 = $this->averageBySubjectAndTrimester($subject->subject, 1);
+        $trimester2 = $this->averageBySubjectAndTrimester($subject->subject, 2);
+        $trimester3 = $this->averageBySubjectAndTrimester($subject->subject, 3);
+
+        $finalEvaluation = ($trimester1 + $trimester2 + $trimester3) / 3;
+
+        $finalEvaluations[$subject->subject] = $finalEvaluation;
+    }
+
+    return $finalEvaluations;
+} */
+
+
+
 }

@@ -140,6 +140,16 @@ label.form-check-input{
 
 }
 
+label.form-check-label{
+    background:transparent;
+    color:black;
+}
+
+input.form-check-input{
+    position:relative;
+    top:7px;
+}
+
 
 button[type=submit]{
     width:70px;

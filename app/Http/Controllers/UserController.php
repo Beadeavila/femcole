@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class UserController
@@ -49,6 +50,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
         $image = $request->file('image');
+        $url = Storage::url($image);
         $imageName = time() . '_' . $image->getClientOriginalName();
         $image->storeAs('public/images', $imageName);
         $user->image = 'storage/images/' . $imageName;

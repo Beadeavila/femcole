@@ -86,7 +86,7 @@
                     </tbody>
                 </table>
             </div>
-            {!! $grades->links() !!}
         </div>
+        <div class="paginationFem"> {!! $grades->links() !!}</div>
     </div>
 @endsection

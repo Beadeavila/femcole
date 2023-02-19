@@ -1,8 +1,15 @@
 # ![logoFemCole](https://user-images.githubusercontent.com/98114939/217543869-b37d30ae-92ac-406c-9f04-a1b94f3c198d.png)
 
-With this innovative pedagogical application, school teachers can create students and give them marks for each of their trimesters!
+<h3 align="center"> 
+FemCole - an innovative app created to manage teacher's classes of a school
+</h3>
 
-In addition, students can consult their grades and get information about their average so that they can get their elbows in more or less 
+A school required an app to manage teacher's classes and that's how FemCole was created. 
+This innovative app allow for teachers watch a list of all of their students and student's grades for each trimester and exam.
+
+At the beggining of the school year, teachers can register their students on the app and then, students can log in using their email and password. This way, students only can watch their grades on their profile. If grades are lower than five they are gonna be red (fail), and if grades are alike or higher than five they are gonna be green (pass).
+
+Teachers also can register student's grades as the school year progress and watch the whole studdent's profile, averages included. Both students and grades can be edited or deleted by the theacher if it's necessary. 
 ***
 
 ## Table of contents

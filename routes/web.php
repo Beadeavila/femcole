@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Mail\SendRating;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +33,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::post('/upload', [UserController::class], 'upload')->name('user.upload');
+
+Route::get('/mail', function () {
+    //return new SendRating("Óscar");
+
+    $response = Mail::to('beadeavila10@gmail.com')->send(new SendRating("Óscar"));
+
+    dump($response);
+});

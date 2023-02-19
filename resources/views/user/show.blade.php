@@ -100,24 +100,26 @@
                      
                 
                         @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
-                        <td style="{{ $grade->grade < 5 ? 'color: red' : '' }}">{{ $grade->grade }} </td> 
+                        <td style="{{ $grade->grade < 5 ? 'color: red' : ($grade->grade == 10 ? 'color: #4311B9; font-weight:bold' : '') }}">{{ $grade->grade }} </td> 
                         @endforeach
                     </td>
                     @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
                         
                             @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
-                            <td style="{{ $grade->grade < 5 ? 'color: red' : '' }}">{{ $grade->grade }} </td>    
+                            <td style="{{ $grade->grade < 5 ? 'color: red' : ($grade->grade == 10 ? 'color: #4311B9; font-weight:bold' : '') }}">
+                            {{ $grade->grade }}
+                            </td>    
                             @endforeach
                         
                         
-                    @endforeach
+                    @endforeach=
                     
                         @php
                             $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
                             /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
                             $average = $grades_sum ? round($grades_sum / 3, 0) : 0;
                         @endphp
-                    <td style="{{ $average < 5 ? 'color: red' : '' }}">
+                    <td style="{{ $average < 5 ? 'color: red' : ($average ==10 ? 'color: #4311B9; font-weight:bold' : '') }}">
                         {{ $average }}
                     </td>
                     

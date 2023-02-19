@@ -112,7 +112,7 @@
                             @endforeach
                         
                         
-                    @endforeach=
+                    @endforeach
                     
                         @php
                             $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');

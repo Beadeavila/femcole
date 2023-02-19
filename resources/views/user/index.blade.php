@@ -14,19 +14,20 @@
             </a>
         </div>
 
-        @if ($message = Session::get('success')) 
+       
+
+        <div class="tableContainer">
+            <div class="listStudents">LISTA DE ESTUDIANTES</div>
+            @if ($message = Session::get('success')) 
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div> 
         @endif
-
-        <div class="tableContainer">
-            <div class="listStudents">LISTA DE ESTUDIANTES</div>
                 <table class="table tableHome table-striped text-center">
                     <thead class="tableHead">
                         <tr>
-                            <th>Nº</th>
-                            <th>Nombre y Apellidos</th>
+                            <th style="font-size:17px;color:white;"><strong>Nº</strong></th>
+                            <th style="font-size:17px;color:white;"><strong>Nombre y Apellidos</strong></th>
                             {{-- <th>Email</th>
                             <th>Role (0=Alumno,1=Profesor)</th> --}}
                             <th></th>

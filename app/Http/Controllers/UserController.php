@@ -87,7 +87,7 @@ class UserController extends Controller
         $user->image = 'storage/images/' . $imageName;
         $user->save();
         return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+            ->with('success', 'Estudiante creado.');
     }
 
 
@@ -119,7 +119,7 @@ class UserController extends Controller
         $user->update($request->all());
 
         return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
+            ->with('success', 'Estudiante actualizado');
     }
 
     /**
@@ -132,7 +132,7 @@ class UserController extends Controller
         $user = User::find($id)->delete();
 
         return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully');
+            ->with('success', 'Estudiante borrado correctamente');
     }
 
 

@@ -26,7 +26,11 @@ Auth::routes();
 Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::resource('grades', App\Http\Controllers\GradeController::class)->middleware('auth');
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/create', [GetEmployeePerformance::class,'create'])->middleware(['isadmin', 'auth'])->name('create');
 
 
 Route::post('/upload', [UserController::class], 'upload')->name('user.upload');

@@ -13,6 +13,7 @@
                     <div class="textAddButton">AÑADIR NOTA</div>
                 </button>
             </a>
+        
         </div>
 
 
@@ -32,14 +33,15 @@
                 
                     </div>
                     </div> --}}
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif
+
 
         <div class="tableContainer">
             <div class="listStudents">LISTA DE NOTAS</div>
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+            @endif
                 <table class="table tableHome table-striped text-center">
                     <thead class="tableHead">
                         <tr>
@@ -74,11 +76,11 @@
                                 <td>{{ $grade->schoolYear }}</td>
                                 <td>
                                     <form action="{{ route('grades.destroy',$grade->id) }}" method="POST">
-                                        <a class="btn btn-sm btn-primary " href="{{ route('grades.show',$grade->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                        <a class="btn btn-sm btn-success" href="{{ route('grades.edit',$grade->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                        <a class="btnCrud green btn-sm btn-primary " href="{{ route('grades.show',$grade->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                        <a class="btnCrud blue btn-sm btn-success" href="{{ route('grades.edit',$grade->id) }}"><i class="fa fa-fw fa-edit"></i> Modifcar</a>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                        <button type="submit" class="btnCrud red btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                     </form>
                                 </td>
                             </tr>

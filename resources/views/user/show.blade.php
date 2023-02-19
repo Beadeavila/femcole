@@ -51,17 +51,17 @@
                         <td>{{ $subject }}</td>
                         <td>
                             @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
-                                {{ $grade->grade }}
+                                <span class="{{ $grade->grade < 5 ? 'text-danger' : 'text-success' }}">{{ $grade->grade }}</span>
                             @endforeach
                         </td>
                         @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                            <td>
+                            <td class="{{ $grade->grade < 5 ? 'text-danger' : 'text-success' }}">
                                 @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
-                                    {{ $grade->grade }}
+                                        {{ $grade->grade }}
                                 @endforeach
                             </td>
                         @endforeach
-                        <td>
+                        <td class="{{ $grade->grade < 5 ? 'text-danger' : 'text-success' }}">
                             @php
                                 $gradesSum = $subjectGrades->where('trimester', $trimester)->sum('grade');
                                 /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */

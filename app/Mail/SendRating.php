@@ -14,6 +14,8 @@ class SendRating extends Mailable
     use Queueable, SerializesModels;
 
     public $name;
+    
+
 
     /**
      * Create a new message instance.
@@ -23,6 +25,7 @@ class SendRating extends Mailable
     public function __construct($name)
     {
         $this->name = $name;
+        
     }
 
     /**
@@ -33,7 +36,7 @@ class SendRating extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Send Rating',
+            subject: 'Notas de Evaluación',
         );
     }
 
@@ -45,7 +48,7 @@ class SendRating extends Mailable
     public function content()
     {
         return new Content(
-            view: 'email',
+            view: 'email'
         );
     }
 

@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1> Saludos, {{$name}}</h1>
-    <p>Esto es una prueba de envio de mails desde laravel.</p>
+    <p>Esto es una prueba de envio de mails desde laravel.Conseguido!</p>
     
 </body>
 </html>

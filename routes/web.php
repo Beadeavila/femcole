@@ -37,7 +37,7 @@ Route::post('/upload', [UserController::class], 'upload')->name('user.upload');
 Route::get('/mail', function () {
     //return new SendRating("Óscar");
 
-    $response = Mail::to('beadeavila10@gmail.com')->send(new SendRating("Óscar"));
+    $response = Mail::to('beadeavila10@gmail.com')->send(new SendRating("Chicas"));
 
     dump($response);
 });

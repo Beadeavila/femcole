@@ -96,32 +96,43 @@
         <tbody>
             @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
                 <tr>
-                    <td>{{ $subject }}</td>
-                    <td>
+                    <td >{{ $subject }}</td>
+                     
+                
                         @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
-                            {{ $grade->grade }}
+                        <td style="{{ $grade->grade < 5 ? 'color: red' : '' }}">{{ $grade->grade }} </td> 
                         @endforeach
                     </td>
                     @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                        <td>
+                        
                             @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
-                                {{ $grade->grade }}
+                            <td style="{{ $grade->grade < 5 ? 'color: red' : '' }}">{{ $grade->grade }} </td>    
                             @endforeach
-                        </td>
+                        
+                        
                     @endforeach
-                    <td>
+                    
                         @php
                             $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
                             /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
                             $average = $grades_sum ? round($grades_sum / 3, 0) : 0;
                         @endphp
+                    <td style="{{ $average < 5 ? 'color: red' : '' }}">
                         {{ $average }}
                     </td>
+                    
+                        
                 </tr>
             @endforeach
         </tbody>
     </table>
 @endforeach
-
+{{-- /<form method="POST" action="{{ route('sendView') }}">
+    @csrf
+    <input type="hidden" name="user" value="{{$user->email}}"> <!-- Obtener el correo electrónico del usuario desde la base de datos -->
+    <input type="hidden" name="issue" value="Notas de Evaluación"> <!-- Asunto del correo electrónico -->
+    <input type="hidden" name="message" value=''> <!-- Obtener el contenido HTML de la vista -->
+    <button type="submit" onclick="return confirm ('Correo enviado a {{ $user->name }} satisfactoriamente.')" class="btn btn-sm btn-primary " > Enviar Email con Notas de Evaliación</button>
+</form> --}}
 </section>
 @endsection

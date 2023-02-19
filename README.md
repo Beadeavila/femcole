@@ -1,8 +1,8 @@
 # ![logoFemCole](https://user-images.githubusercontent.com/98114939/217543869-b37d30ae-92ac-406c-9f04-a1b94f3c198d.png)
 
 <h3 align="center"> 
-FemCole - an innovative app created to manage teacher's classes 
-</h3>
+FemCole - an innovative app created to manage teacher's classes  👩‍🏫
+</h3
 
 A school required an app to manage teacher's classes and that's how FemCole was created. 
 This innovative app allow for teachers watch a list of all of their students and student's grades for each trimester and exam.

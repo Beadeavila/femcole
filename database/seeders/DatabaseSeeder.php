@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use App\Models\Grade;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,5 +26,13 @@ class DatabaseSeeder extends Seeder
         User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
         User::factory()->create(['name' => 'user1', 'email' => 'user1@user1.com', 'isAdmin' => false]);
         User::factory(3)->create();
+
+        User::factory()
+            ->has(Grade::factory()->count(5))
+            ->create();
+
+            Grade::factory()
+            ->has(User::factory()->count(5))
+            ->create();
     }
 }

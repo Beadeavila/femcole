@@ -48,24 +48,28 @@
                 @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
                     <tr>
                         <td>{{ $subject }}</td>
-                        <td>
+                        
                             @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
-                                {{ $grade->grade }}
+                             
+                            <td style="{{ $grade->grade < 5 ? 'color: red' : ($grade->grade == 10 ? 'color: #4311B9; font-weight:bold' : '') }}">{{ $grade->grade }} </td> 
+                             
                             @endforeach
                         </td>
                         @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                            <td>
-                                @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
-                                    {{ $grade->grade }}
+                        
+                        @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
+                                   
+                                    <td style="{{ $grade->grade < 5 ? 'color: red' : ($grade->grade == 10 ? 'color: #4311B9; font-weight:bold' : '') }}">{{ $grade->grade }} </td> 
                                 @endforeach
                             </td>
                         @endforeach
-                        <td>
+                       
                             @php
                                 $gradesSum = $subjectGrades->where('trimester', $trimester)->sum('grade');
                                 /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
                                 $average = $gradesSum ? round($gradesSum / 3, 0) : 0;
                             @endphp
+                            <td style="{{ $average < 5 ? 'color: red' : ($average ==10 ? 'color: #4311B9; font-weight:bold' : '') }}">
                             {{ $average }}
                         </td>
                     </tr>
@@ -73,42 +77,7 @@
             </tbody>
         </table>
     @endforeach
-    {{-- <table class="table tableHome table-striped text-center">
-        <thead class="tableHead">
-            <tr>
-                <th>Evaluación Final</th>
-                <th>Asignatura</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
-                <tr>
-                    <td>{{ $subject }}</td>
-                    <td>
-                        @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
-                            {{ $grade->grade }}
-                        @endforeach
-                    </td>
-                    @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                        <td>
-                            @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
-                                {{ $grade->grade }}
-                            @endforeach
-                        </td>
-                    @endforeach
-                    <td>
-                        @php
-                            $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
-                            /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
-                            $average = $grades_sum ? round($grades_sum / 3, 0) : 0;
-                        @endphp
-                        {{ $average }}
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endforeach
+
 
 </section>
 @endsection

@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory()->create(['name' => 'Paloma', 'surname1' => 'Babot', 'surname2' => 'León', 'email' => 'palo@gmail.com', 'image'=> asset('/storage/images/babyPalo.jpg'), 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Ana', 'surname1' => 'Rueda', 'surname2' => 'Guiu', 'email' => 'michi@gmail.com', 'image'=> asset('/storage/images/babyAna.jpg'), 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Esther', 'surname1' => 'De Luque', 'surname2' => 'Zurita', 'email' => 'esther@gmail.com', 'image'=> asset('/storage/images/babyEsther.jpg'), 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Beatriz', 'surname1' => 'De Ávila', 'surname2' => 'Jiménez', 'email' => 'bea@gmail.com', 'image'=> asset('/storage/images/babyBea.jpg'), 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Adriana', 'surname1' => 'Aguilar', 'surname2' => 'Ruiz', 'email' => 'adriana@gmail.com', 'image'=> asset('/storage/images/babyAdri.jpg'), 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Paula', 'surname1' => 'Ramírez', 'surname2' => 'Agudelo', 'email' => 'paula@gmail.com','image'=> asset('/storage/images/babyPaula.jpg'), 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Ana', 'surname1' => 'Rueda', 'surname2' => 'Guiu', 'email' => 'michi@gmail.com', 'image'=> '/images/babyAna.jpg', 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Esther', 'surname1' => 'De Luque', 'surname2' => 'Zurita', 'email' => 'esther@gmail.com', 'image'=> '/images/babyEsther.jpg', 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Beatriz', 'surname1' => 'De Ávila', 'surname2' => 'Jiménez', 'email' => 'bea@gmail.com', 'image'=> '/images/babyBea.jpg', 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Adriana', 'surname1' => 'Aguilar', 'surname2' => 'Ruiz', 'email' => 'adriana@gmail.com', 'image'=> '/images/babyAdri.jpg', 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Paula', 'surname1' => 'Ramírez', 'surname2' => 'Agudelo', 'email' => 'paula@gmail.com','image'=> '/images/babyPaula.jpg', 'isAdmin' => false]);
         User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
 
         // Recorrer todos los usuarios creados

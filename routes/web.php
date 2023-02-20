@@ -35,9 +35,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/upload', [UserController::class], 'upload')->name('user.upload');
 
 Route::get('/mail', function () {
-    //return new SendRating("Óscar");
+    return new SendRating("");
 
-    $response = Mail::to('beadeavila10@gmail.com')->send(new SendRating("Chicas"));
+    /* $response = Mail::to('beadeavila10@gmail.com')->send(new SendRating("Chicas"));
 
-    dump($response);
-});
+    dump($response); */
+})->name('mail');

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <style type="text/css">
     h1{
-        font-weith:bold;
+        font-weigth:bold;
     }
     </style>
 </head>

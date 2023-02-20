@@ -129,12 +129,12 @@
         </tbody>
     </table>
 @endforeach
-{{-- /<form method="POST" action="{{ route('sendView') }}">
+<form method="POST" action="{{ route('mail') }}">
     @csrf
     <input type="hidden" name="user" value="{{$user->email}}"> <!-- Obtener el correo electrónico del usuario desde la base de datos -->
     <input type="hidden" name="issue" value="Notas de Evaluación"> <!-- Asunto del correo electrónico -->
     <input type="hidden" name="message" value=''> <!-- Obtener el contenido HTML de la vista -->
     <button type="submit" onclick="return confirm ('Correo enviado a {{ $user->name }} satisfactoriamente.')" class="btn btn-sm btn-primary " > Enviar Email con Notas de Evaliación</button>
-</form> --}}
+</form> 
 </section>
 @endsection

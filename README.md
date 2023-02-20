@@ -4,7 +4,7 @@
 FemCole - an innovative app created to manage teacher's classes  👩‍🏫
 </h3
 
-A school required an app to manage teacher's classes and that's how FemCole was created. 
+A Spanish speaking school required an app to manage teachers' classes and that's how FemCole was created. 
 This innovative app allow for teachers watch a list of all of their students and student's grades for each trimester and exam.
 
 At the beggining of the school year, teachers can register their students on the app and then, students can log in using their email and password. This way, students only can watch their grades on their profile. If grades are lower than five they are gonna be red (fail), and if grades are alike or higher than five they are gonna be green (pass).

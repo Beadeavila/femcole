@@ -7,6 +7,7 @@
         font-weigth:bold;
     }
     </style>
+    
 </head>
 <body>
     <h1> Saludos, {{$name}}</h1>

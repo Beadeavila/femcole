@@ -8,44 +8,76 @@
 @php
     use Illuminate\Support\Facades\Storage;
 @endphp
-<div class="studentCard">
-    <img src="{{ Storage::url($user->image) }}" alt="{{ $user->name }}" class="imageStudent">
+    <div class="studentCard">
+        <img src="{{ asset($user->image) }}" alt="{{ $user->name }}" class="imageStudent">
 
-
-    <div class="infoStudent">
+        <div class="infoStudent">
             <div>
-            <strong>Nombre y Apellidos:</strong>
-            {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}
+                <strong>Nombre y Apellidos:</strong>
+                {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}
             </div>
             <div>
-            <strong>Curso: </strong>
-            {{-- {{ $grades->schoolYear }} --}}
+                <strong>Curso: </strong>
+                2022-2023
             </div>
             <div>
-            <strong>Email:</strong>
-            {{ $user->email }}
+                <strong>Email:</strong>
+                {{ $user->email }}
             </div>
+        </div>
     </div>
-</div>
-                        
-    <h2>Calificaciones de {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}</h2>
 
-{{-- <div class="allT">
-
-	@foreach(range(1, 3) as $trimester)
-    <table class="table tableHome table-striped text-center">
+    @foreach(range(1, 3) as $trimester)
+        <table class="table tableHome table-striped text-center">
+            <thead class="tableHead">
+                <tr>
+                    <th colspan="{{ count($grades->pluck('exam')->unique()) + 2 }}">
+                        Trimestre {{ $trimester }}
+                    </th>
+                </tr>
+                <tr>
+                    <th>Asignatura</th>
+                    <th class="tableTrimesters">Nota 1</th>
+                    @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
+                        <th class="tableTrimesters">Nota {{ $exam }}</th>
+                    @endforeach
+                    <th class="tableTrimesters">Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
+                    <tr>
+                        <td>{{ $subject }}</td>
+                        <td>
+                            @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
+                                {{ $grade->grade }}
+                            @endforeach
+                        </td>
+                        @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
+                            <td>
+                                @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
+                                    {{ $grade->grade }}
+                                @endforeach
+                            </td>
+                        @endforeach
+                        <td>
+                            @php
+                                $gradesSum = $subjectGrades->where('trimester', $trimester)->sum('grade');
+                                /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
+                                $average = $gradesSum ? round($gradesSum / 3, 0) : 0;
+                            @endphp
+                            {{ $average }}
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endforeach
+    {{-- <table class="table tableHome table-striped text-center">
         <thead class="tableHead">
             <tr>
-                <th colspan="{{ count($grades->pluck('exam')->unique()) + 1 }}">
-                    Trimester {{ $trimester }}
-                </th>
-            </tr>
-            <tr>
+                <th>Evaluación Final</th>
                 <th>Asignatura</th>
-                <th class="tableTrimesters">1 Nota</th>
-                @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                    <th class="tableTrimesters">{{ $exam }} Nota</th>
-                @endforeach
             </tr>
         </thead>
         <tbody>
@@ -64,77 +96,20 @@
                             @endforeach
                         </td>
                     @endforeach
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endforeach --}}
-
-
-
-
-
-{{-- Codigo LAIA --}}
-
-@foreach(range(1, 3) as $trimester)
-    <table class="table tableHome table-striped text-center">
-        <thead class="tableHead">
-            <tr>
-                <th colspan="{{ count($grades->pluck('exam')->unique()) + 2 }}">
-                    Trimester {{ $trimester }}
-                </th>
-            </tr>
-            <tr>
-                <th>Asignatura</th>
-                <th class="tableTrimesters">1 Nota</th>
-                @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                    <th class="tableTrimesters">{{ $exam }} Nota</th>
-                @endforeach
-                <th class="tableTrimesters">Media</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($grades->groupBy('subject') as $subject => $subjectGrades)
-                <tr>
-                    <td >{{ $subject }}</td>
-                     
-                
-                        @foreach($subjectGrades->where('exam', '1')->where('trimester', $trimester) as $grade)
-                        <td style="{{ $grade->grade < 5 ? 'color: red' : ($grade->grade == 10 ? 'color: #4311B9; font-weight:bold' : '') }}">{{ $grade->grade }} </td> 
-                        @endforeach
-                    </td>
-                    @foreach($grades->pluck('exam')->unique()->reject(fn($e) => $e == '1') as $exam)
-                        
-                            @foreach($subjectGrades->where('exam', $exam)->where('trimester', $trimester) as $grade)
-                            <td style="{{ $grade->grade < 5 ? 'color: red' : ($grade->grade == 10 ? 'color: #4311B9; font-weight:bold' : '') }}">
-                            {{ $grade->grade }}
-                            </td>    
-                            @endforeach
-                        
-                        
-                    @endforeach
-                    
+                    <td>
                         @php
                             $grades_sum = $subjectGrades->where('trimester', $trimester)->sum('grade');
                             /* $grades_count = $subjectGrades->where('trimester', $trimester)->count(); */
                             $average = $grades_sum ? round($grades_sum / 3, 0) : 0;
                         @endphp
-                    <td style="{{ $average < 5 ? 'color: red' : ($average ==10 ? 'color: #4311B9; font-weight:bold' : '') }}">
                         {{ $average }}
                     </td>
-                    
-                        
                 </tr>
             @endforeach
         </tbody>
     </table>
 @endforeach
-<form method="POST" action="{{ route('mail') }}">
-    @csrf
-    <input type="hidden" name="user" value="{{$user->email}}"> <!-- Obtener el correo electrónico del usuario desde la base de datos -->
-    <input type="hidden" name="issue" value="Notas de Evaluación"> <!-- Asunto del correo electrónico -->
-    <input type="hidden" name="message" value=''> <!-- Obtener el contenido HTML de la vista -->
-    <button type="submit" onclick="return confirm ('Correo enviado a {{ $user->name }} satisfactoriamente.')" class="btn btn-sm btn-primary " > Enviar Email con Notas de Evaliación</button>
-</form> 
+
 </section>
 @endsection
+

@@ -65,6 +65,7 @@ class GradeController extends Controller
         $grade = Grade::find($id);
 
         return view('grade.show', compact('user', 'grade'));
+
     }
 
     /**

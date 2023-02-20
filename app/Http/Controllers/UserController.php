@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class UserController
@@ -18,46 +19,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function isAdmin()
-{
-    return auth()->user()->isAdmin;
-}
-
-
-    //...
-
     public function index()
     {
-        if ($this->isAdmin()) {
-            $users = User::where('isAdmin','=', false)->paginate();
-            return view('user.index', compact('users'))
-                ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
-        } else {
-            return redirect()->route('users.show', [auth()->id()]);
-        }
+        $users = User::where('isAdmin','=', false)->paginate();
+
+        return view('user.index', compact('users'))
+            ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
-    
-    
-    public function show($id)
-    {
-        if ($this->isAdmin()) {
-            $user = User::findOrFail($id);
-            $grades = $user->grades;
-    
-            return view('user.show', compact('user', 'grades'));
-        } else {
-            $user = User::findOrFail($id);
-            $grades = $user->grades;
-            return view('user.show', compact('user', 'grades'));
-        }
-    }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -82,15 +50,28 @@ class UserController extends Controller
 
         $user = User::create($request->all());
         $image = $request->file('image');
+        $url = Storage::url($image);
         $imageName = time() . '_' . $image->getClientOriginalName();
         $image->storeAs('public/images', $imageName);
         $user->image = 'storage/images/' . $imageName;
         $user->save();
         return redirect()->route('users.index')
-            ->with('success', 'User created successfully.');
+            ->with('success', 'Estudiante creado.');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        $grades = $user->grades;
 
+        return view('user.show', compact('user', 'grades'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -119,7 +100,7 @@ class UserController extends Controller
         $user->update($request->all());
 
         return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
+            ->with('success', 'Estudiante actualizado');
     }
 
     /**
@@ -132,22 +113,19 @@ class UserController extends Controller
         $user = User::find($id)->delete();
 
         return redirect()->route('users.index')
-            ->with('success', 'User deleted successfully');
+            ->with('success', 'Estudiante borrado correctamente');
     }
 
 
     public function upload(Request $request)
 {
-    $file = $request->file('file');
+        $file = $request->file('file');
 
-    $filename = time() . '_' . $file->getClientOriginalName();
+        $filename = time() . '_' . $file->getClientOriginalName();
 
-    $file->move(public_path('uploads'), $filename);
+        $file->move(public_path('uploads'), $filename);
 
-    return response()->json(['filename' => $filename]);
+        return response()->json(['filename' => $filename]);
 }
-
-
-
 
 }

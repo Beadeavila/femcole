@@ -2,56 +2,69 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
+use Tests\TestCase; 
 use App\Models\User;
+use App\Models\Grade;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CRUDUserTest extends TestCase
+class UserControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-
     use RefreshDatabase;
 
-    /* public function test_example()
+    public function testIndexMethodReturnsUsersForAdmin()
     {
-        $response = $this->get('/');
-
+        $admin = User::factory()->create(['isAdmin' => true]);
+        $user = User::factory()->create(['isAdmin' => false]);
+        $response = $this->actingAs($admin)->get(route('users.index'));
         $response->assertStatus(200);
-    } */
-
-    /* public function test_listUserAppearInHomeView(){
-        $this->withExceptionHandling();
-
-        $users = User::factory(2)->create();
-        $user = $users[0];
-
-        $response = $this->get('/users');
-
-        $response->assertSee($user->name);
-
-        $response->assertStatus(200);
-    } */
-
-    public function test_anUserCanBeDeletedByAdminAndCanNotBeDeletedByAnUser(){
-        $this->withExceptionHandling();
-
-        $user = User::factory()->create();
-        $this->assertCount(1,User::all());
-
-        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
-        $this->actingAs($userNoAdmin);
-        $response = $this->delete($user->id);
-        $this->assertCount(2,User::all());
-
-        $userAdmin = User::factory()->create(['isAdmin'=>true]);
-        $this->actingAs($userAdmin);
-        $response = $this->delete($user->id);
-        $this->assertCount(2,User::all());
+        $response->assertViewHas('users', function ($users) use ($user) {
+            return $users->contains($user);
+        });
     }
-}
 
+    public function testIndexMethodRedirectsToUserShowForNonAdmin()
+    {
+        $user = User::factory()->create(['isAdmin' => false]);
+        $response = $this->actingAs($user)->get(route('users.index'));
+        $response->assertOk((route('users.show', [$user->id])));
+    }
+
+    public function testCreateReturnsCreateView()
+    {
+        $admin = User::factory()->create(['isAdmin' => true]);
+
+        $response = $this->actingAs($admin)->get(route('users.create'));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('user.create');
+    }
+
+    public function testStoreCreatesNewUser()
+    {
+        $admin = User::factory()->create(['isAdmin' => true]);
+        $userData = User::factory()->make()->toArray();
+        $userData['image'] = UploadedFile::fake()->create('avatar.jpg');
+        $userData['password'] = 'password'; // Agregar campo password
+        $userData['isAdmin'] = false; // Agregar campo isAdmin
+
+        $response = $this->actingAs($admin)->post(route('users.store'), $userData);
+
+        $response->assertRedirect(route('users.index'));
+        $this->assertDatabaseHas('users', ['email' => $userData['email']]);
+    }
+
+    public function testEditReturnsEditView()
+    {
+        $admin = User::factory()->create(['isAdmin' => true]);
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($admin)->get(route('users.edit', $user->id));
+
+        $response->assertStatus(200);
+        $response->assertViewIs('user.edit');
+        $response->assertViewHas('user', $user);
+    }
+
+}

@@ -37,11 +37,8 @@
             {{ Form::text('isAdmin', $user->isAdmin, ['class' => 'form-control' . ($errors->has('isAdmin') ? ' is-invalid' : ''), 'placeholder' => 'Role']) }}
             {!! $errors->first('isAdmin', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
-        
-
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Añadir Alumno</button>
-    </div>
+        <div class="box-footer mt20">
+            <button type="submit" class="btn btn-primary">Añadir Estudiante</button>
+        </div>
 </div>

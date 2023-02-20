@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
         User::factory()->create(['name' => 'Paloma', 'surname1' => 'Babot', 'surname2' => 'León', 'email' => 'palo@gmail.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Ana', 'surname1' => 'Rueda', 'surname2' => 'Guiu', 'email' => 'michi@gmail.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Esther', 'surname1' => 'De Luque', 'surname2' => 'Zurita', 'email' => 'esther@gmail.com', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Beatriz', 'surname1' => 'De Ávila', 'surname2' => 'Jiménez', 'email' => 'bea@gmail.com', 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Adriana', 'surname1' => 'Aguilar', 'surname2' => 'Ruiz', 'email' => 'adri@gmail.com', 'isAdmin' => false]);
-        User::factory()->create(['name' => 'Paula', 'surname1' => 'Ramírez', 'surname2' => 'Agudelo', 'email' => 'paula@gmail.com', 'isAdmin' => false]);
-    
+        User::factory()->create(['name' => 'Adriana', 'surname1' => 'Aguilar', 'surname2' => 'Ruiz', 'email' => 'adriana@gmail.com', 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Paula', 'surname1' => 'Ramírez', 'surname2' => 'Agudelo', 'email' => 'paula@gmail.com','isAdmin' => false]);
+        User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
+
         // Recorrer todos los usuarios creados
         User::all()->each(function ($user) {
             // Crear notas para todas las asignaturas y trimestres
@@ -45,4 +45,5 @@ class DatabaseSeeder extends Seeder
         });
     }
 }
+
 

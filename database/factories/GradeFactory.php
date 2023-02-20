@@ -17,7 +17,7 @@ class GradeFactory extends Factory
     public function definition()
     {
         return [
-        'user_id' => fake()->randomDigit(1, 3),
+        'user_id' => fake()->randomDigit(1, 6),
         'grade' => fake()->randomFloat(1, 0, 10),
 		'subject' => fake()->randomElement(['Matemáticas', 'Lengua', 'Historia', 'Geografía', 'Inglés']),
 		'trimester' => fake()->numberBetween(1, 3),

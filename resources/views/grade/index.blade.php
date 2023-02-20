@@ -13,15 +13,10 @@
                     <div class="textAddButton">AÑADIR NOTA</div>
                 </button>
             </a>
-        
         </div>
-
-
-
 
 {{-- <section class="content container-fluid">
     <div class="studentCard">
-        
                 <div class="cardFem">
                     <div class="cardHeader">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -29,12 +24,8 @@
                             <span id="card_title" class="cardTitle">
                                 {{ __('Grade') }}
                             </span>
-
-                
-                    </div>
+                        </div>
                     </div> --}}
-
-
         <div class="tableContainer">
             <div class="listStudents">LISTA DE NOTAS</div>
             @if ($message = Session::get('success'))
@@ -62,7 +53,7 @@
                             <td>Nota 2</td>
                             <td>Nota 3</td>
                             <td>Final</td>
-                        </tr> --}}
+                            </tr> --}}
                     </thead>
                     <tbody>
                         @foreach ($grades as $grade)

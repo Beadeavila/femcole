@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create(['name' => 'Paloma', 'surname1' => 'Babot', 'surname2' => 'León', 'email' => 'palo@gmail.com', 'image'=> asset('/storage/images/babyPalo.jpg'), 'isAdmin' => false]);
+        User::factory()->create(['name' => 'Paloma', 'surname1' => 'Babot', 'surname2' => 'León', 'email' => 'palo@gmail.com', 'image'=> asset('img/babyPalo.jpg'), 'isAdmin' => false]);
         User::factory()->create(['name' => 'Ana', 'surname1' => 'Rueda', 'surname2' => 'Guiu', 'email' => 'michi@gmail.com', 'image'=> '/images/babyAna.jpg', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Esther', 'surname1' => 'De Luque', 'surname2' => 'Zurita', 'email' => 'esther@gmail.com', 'image'=> '/images/babyEsther.jpg', 'isAdmin' => false]);
         User::factory()->create(['name' => 'Beatriz', 'surname1' => 'De Ávila', 'surname2' => 'Jiménez', 'email' => 'bea@gmail.com', 'image'=> '/images/babyBea.jpg', 'isAdmin' => false]);

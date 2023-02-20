@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase; 
+use Tests\TestCase;
 use App\Models\User;
 use App\Models\Grade;
 use Illuminate\Http\UploadedFile;

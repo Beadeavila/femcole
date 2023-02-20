@@ -1,7 +1,7 @@
 # ![logoFemCole](https://user-images.githubusercontent.com/98114939/217543869-b37d30ae-92ac-406c-9f04-a1b94f3c198d.png)
 
 <h3 align="center"> 
-FemCole - an innovative app created to manage teacher's classes  👩‍🏫
+FemCole - an innovative app created to manage teachers' classes  👩‍🏫
 </h3
 
 A Spanish speaking school required an app to manage teachers' classes and that's how FemCole was created. 

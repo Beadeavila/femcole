@@ -3,8 +3,8 @@
     background-color: #E7E3EF !important;
 }
 
-
 /* ___CSS HOME DISTRIBUTION___ */
+
 .homeContainer {
     display: flex;
 }
@@ -22,8 +22,8 @@
 }
 
 /* ___CSS TITLE___ */
+
 .listStudents {
-    /* position: relative; */
     width: 450px;
     height: 90px;
     left: 492px;
@@ -59,16 +59,10 @@
     color: white !important;
     font-size: 15px;
     position: relative;
-    /* top: 10px; */
     margin-top: 30px;
 }
 
-
 /* ___CSS TABLE___ */
-
-
-
-
 
 .tableHead {
     background-color: #C7B8EA;

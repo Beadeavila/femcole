@@ -13,16 +13,13 @@
                 </button>
             </a>
         </div>
-
-       
-
         <div class="tableContainer">
             <div class="listStudents">LISTA DE ESTUDIANTES</div>
             @if ($message = Session::get('success')) 
             <div class="alert alert-success">
                 <p>{{ $message }}</p>
             </div> 
-        @endif
+            @endif
                 <table class="table tableHome table-striped text-center">
                     <thead class="tableHead">
                         <tr>

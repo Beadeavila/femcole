@@ -1,12 +1,10 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-
         <div class="form-group">
             {{ Form::label('nombre') }}
             {{ Form::select('user_id', $user, $grade->user_id, ['class' => 'form-control' . ($errors->has('user_id') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('user_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
         <div class="form-group">
             {{ Form::label('asignatura') }}
             {{ Form::select('subject',['Lengua'=>'Lengua','Inglés'=>'Inglés','Matemáticas'=>'Matemáticas', 'Historia'=>'Historia' ,'Geografía'=>'Geografía'], $grade->subject, ['class' => 'form-control' . ($errors->has('subject') ? ' is-invalid' : ''), 'placeholder' => 'Asignatura']) }}
@@ -32,9 +30,8 @@
             {{ Form::text('schoolYear', $grade->schoolYear, ['class' => 'form-control' . ($errors->has('schoolYear') ? ' is-invalid' : ''), 'placeholder' => '2023']) }}
             {!! $errors->first('schoolYear', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </div>
+        <div class="box-footer mt20">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
 </div>

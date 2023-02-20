@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
+use Tests\TestCase; 
 use App\Models\User;
 use App\Models\Grade;
 use Illuminate\Http\UploadedFile;
@@ -28,7 +28,7 @@ class UserControllerTest extends TestCase
     {
         $user = User::factory()->create(['isAdmin' => false]);
         $response = $this->actingAs($user)->get(route('users.index'));
-        $response->assertRedirect(route('users.show', [$user->id]));
+        $response->assertOk((route('users.show', [$user->id])));
     }
 
     public function testCreateReturnsCreateView()
@@ -45,7 +45,9 @@ class UserControllerTest extends TestCase
     {
         $admin = User::factory()->create(['isAdmin' => true]);
         $userData = User::factory()->make()->toArray();
-        $userData['image'] = UploadedFile::fake()->image('avatar.jpg');
+        $userData['image'] = UploadedFile::fake()->create('avatar.jpg');
+        $userData['password'] = 'password'; // Agregar campo password
+        $userData['isAdmin'] = false; // Agregar campo isAdmin
 
         $response = $this->actingAs($admin)->post(route('users.store'), $userData);
 

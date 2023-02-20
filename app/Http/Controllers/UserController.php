@@ -119,13 +119,13 @@ class UserController extends Controller
 
     public function upload(Request $request)
 {
-    $file = $request->file('file');
+        $file = $request->file('file');
 
-    $filename = time() . '_' . $file->getClientOriginalName();
+        $filename = time() . '_' . $file->getClientOriginalName();
 
-    $file->move(public_path('uploads'), $filename);
+        $file->move(public_path('uploads'), $filename);
 
-    return response()->json(['filename' => $filename]);
+        return response()->json(['filename' => $filename]);
 }
 
 }

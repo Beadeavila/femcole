@@ -7,11 +7,7 @@
 @section('content')
     <section class="content container-fluid">
         <div class="studentCard">
-
             {{-- <img src="https://res.cloudinary.com/dog5ljnve/image/upload/v1675023061/logoFemCole_q4mump.png" alt="Paloma Babot" class="imageStudent"> --}}
-
-
-
 
             <div class="cardFem">
                 <div class="cardHeader">
@@ -61,14 +57,13 @@
                         <tr>
                             <td>{{ $subject }}</td>
                             @foreach ($trimesters as $trimester)
-                                <td>{{$trimesterAverages[$trimester]}}</td>
+                            <td>{{$trimesterAverages[$trimester]}}</td>
                             @endforeach
                             <td>{{ round(array_sum($trimesterAverages) / 3, 0) }}</td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table> --}}
-
                 <div class="allT">
                     <table class="firstT box table-striped text-center">
                         <thead>

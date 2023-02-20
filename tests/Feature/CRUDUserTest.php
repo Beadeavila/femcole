@@ -9,7 +9,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class UserControllerTest extends TestCase
+class CRUDUserTest extends TestCase
 {
     use RefreshDatabase;
 

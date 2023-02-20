@@ -37,11 +37,11 @@
                     @endif
 
 
-@foreach ($grades as $grade)
+{{-- @foreach ($grades as $grade)
 <p>
 {{ $grade->user->name }}
 </p>
-@endforeach
+@endforeach --}}
 
 
 

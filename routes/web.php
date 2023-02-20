@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::redirect('/', 'login');
+
+Auth::routes(); 
 
 Route::resource('users', App\Http\Controllers\UserController::class)->middleware('auth');
 Route::resource('grades', App\Http\Controllers\GradeController::class)->middleware('auth');
@@ -26,4 +29,4 @@ Route::resource('grades', App\Http\Controllers\GradeController::class)->middlewa
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::post('/upload', 'UserController@upload')->name('user.upload');
+Route::post('/upload', [UserController::class], 'upload')->name('user.upload');

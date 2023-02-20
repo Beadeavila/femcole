@@ -30,3 +30,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::post('/upload', [UserController::class], 'upload')->name('user.upload');
+

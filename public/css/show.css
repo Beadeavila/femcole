@@ -5,15 +5,12 @@
     margin: 15px;
 }
 
-
-
 .infoStudent p{
     line-height: 25px;
     font-size:17px;
     font-weight: 900;
     position:relative;
     top:0px; 
-
 }
 
 .imageStudent{
@@ -36,11 +33,6 @@
     position: relative;
 }
 
-
-
-
-
-
 .tableNotes{
     background-color:#3D73B2;
     color: white;
@@ -54,34 +46,16 @@
     padding: 15px;
 }
 
-
-
-/* .addStudentButton {
-    background-color: #C7B8EA !important;
-    border-color: transparent !important;
-    width: auto;
-    height: 100px;
-    background-repeat: no-repeat;
-    image-rendering: url("../img/editar.png");
-    background-position: top;
-} */
-
-
-/* .buttom{
-    float: left;
-} */
-
 #main-conteiner{
     width:100%;
     display:flex;
     padding-top: 10px;
     text-align: justify;
     justify-content: center;
-
 }
 
-
 /*EDIT BOTON*/
+
 .btnB{
     border-radius: 3px;
     display: inline-block;
@@ -99,7 +73,6 @@
     flex-direction: row;
 }
 
-
 .btnCrud{
     width: 100px;
     background: #d9cef4!important;
@@ -113,10 +86,7 @@
     font-size: 11px;
     margin:5px;
     text-decoration:none;
-  
 }
-
-
 
 a.green{
     color:rgb(37, 115, 37)!important;
@@ -138,22 +108,23 @@ a.blue:hover{
 
 a.red{
     color:red!important;
-    
 }
 
 .btn-purpleB{
     color: white;
     background-color: #AEA0D0;
 }
+
 .btn-purpleB:hover{
     background-color: #988cb5;
 }
+
 .btn-purpleB:active{
     background-color: #7d7396;
 }
 
-
 /*BOTON ELIMINAR*/
+
 .btnD{
     border-radius: 3px;
     display: inline-block;
@@ -170,6 +141,7 @@ a.red{
     color: white;
     background-color: #AEA0D0;
 }
+
 .btn-purpleD:hover{
     background-color: #988cb5;
 }
@@ -178,6 +150,7 @@ a.red{
 }
 
 /*BOTON BACK HOME*/
+
 .btnA{
     border-radius: 3px;
     display: inline-block;
@@ -194,9 +167,11 @@ a.red{
     color: white;
     background-color: #ff9c64;
 }
+
 .btn-purpleA:hover{
     background-color: #da8555;
 }
+
 .btn-purpleA:active{
     background-color: #ad6d48;
 }

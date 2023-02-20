@@ -27,12 +27,12 @@ class Grade extends Model
     use HasFactory;
 
     static $rules = [
-		'user_id' => 'required',
-    'grade' => 'required',
-		'subject' => 'required',
-		'trimester' => 'required',
-		'exam' => 'required',
-		'schoolYear' => 'required',
+        'user_id' => 'required',
+        'grade' => 'required',
+        'subject' => 'required',
+        'trimester' => 'required',
+        'exam' => 'required',
+        'schoolYear' => 'required',
     ];
 
     protected $perPage = 20;
@@ -44,7 +44,6 @@ class Grade extends Model
      */
     protected $fillable = ['user_id','subject','trimester','exam','grade','schoolYear'];
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -52,6 +51,4 @@ class Grade extends Model
     {
         return $this->hasOne('App\Models\User', 'id', 'user_id');
     }
-    
-
 }

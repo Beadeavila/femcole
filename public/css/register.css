@@ -1,10 +1,6 @@
-
-
-
 .container{
     background: #E7E3EF;
     padding-top:30px;
-
 }
 
 .cardHeader{
@@ -20,28 +16,23 @@
     text-align:center;
     width: 380px;
     margin: 0 auto 30px auto;
-
 }
 
 .card{   
     background: #E7E3EF;
     border-color: #E7E3EF!important;
-    }
-
+}
 
 form{
     display:flex;
     flex-direction:column;
     justify-content: center;
 
-    }
-
+}
 
 .cardBody{
     background: #E7E3EF;
     border:0;
-  
-  
 }
 
 .colFormLabel{
@@ -53,9 +44,8 @@ form{
     padding:10px 0px 10px 0px;
     font-weight:bold;
     font-size:13px;
-    
-
 }
+
 input, button {
     font-family: 'Montserrat'!important; 
     font-size:13px;
@@ -68,7 +58,6 @@ input[type=text] {
     padding:10px 0px 10px 5px;
     color:#000000;
     border:0;
-
 }
 
 input[type=email] {
@@ -78,7 +67,6 @@ input[type=email] {
     padding:10px 0px 10px 5px;
     color:#000000;
     border:0;
-
 }
 
 a.input[type=password] {
@@ -88,14 +76,12 @@ a.input[type=password] {
     padding:10px 0px 10px 5px;
     color:#000000;
     border:0;
-
 }
 
 .btnBox{
-display:flex;
-flex-direction: row;
-justify-content: center;
-
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 a button[type=submit].btnRegister{
@@ -112,8 +98,8 @@ a button[type=submit].btnRegister{
     background-position:left;
     background-position-x: 13px;;
     background-size: 25px;
-
 }
+
 a button[type=submit].btnRegister:hover{
     background: #6b2ff8;
     background-image: url("../img/plusIcon.png");
@@ -122,7 +108,6 @@ a button[type=submit].btnRegister:hover{
     background-position-x: 13px;;
     background-size: 25px;
 }
-
 
 a button[type=submit].btnLogin{
     width:130px;
@@ -133,11 +118,10 @@ a button[type=submit].btnLogin{
     padding:10px 0px 10px 5px;
     font-size:13px;
 }
+
 a button[type=submit].btnLogin:hover{
     background: #6b2ff8;
-
 }
-
 
 a.btnForgot{
     width:150px;
@@ -149,10 +133,10 @@ a.btnForgot{
     font-size:13px;
     text-decoration:none;
 }
+
 a.btnForgot:hover{
     background: #6b2ff8;
     color:#ffffff;
-
 }
 
 a button[type=reset].btnCancel{
@@ -169,7 +153,6 @@ a button[type=reset].btnCancel{
     background-position:left;
     background-position-x: 20px;;
     background-size: 25px;
-
 }
 
 a button[type=reset].btnCancel:hover{

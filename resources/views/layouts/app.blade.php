@@ -34,7 +34,6 @@
         </main>
         <x-footer> </x-footer>
 
-
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>

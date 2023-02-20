@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
 
-
 .alert{
     width:100%;
     display:flex;
     flex-direction:row;
     justify-content: center;
-   margin:0!important;
+    margin:0!important;
 }
 
 .alert p{
- 
-   margin:0!important;
+    margin:0!important;
 }
 
 .paginationFem{
@@ -29,19 +27,18 @@
 .paginationFem nav span{
     color:#6b2ff8;
 
-
 }
 
 .paginationFem nav a{
     color:#ffffff!important;
     text-decoration:none;
-    }
+}
 
 .paginationFem nav a:hover{
     color:#6b2ff8!important;
     text-decoration:none;
     background-color:#ffffff!important;
-    }
+}
 
 .paginationFem .px-4 {
     color:#ffffff!important;
@@ -57,7 +54,6 @@
 }
 
 .paginationFem p.text-sm{
-   
     margin-top:20px;
 }
 
@@ -66,7 +62,6 @@ a.btn.btn-link{
     text-decoration:none!important;
     font-size:12px;
     font-family: 'Montserrat';
-    
 }
 
 main{
@@ -84,8 +79,7 @@ button.navbar-toggler{
     display:flex;
     flex-direction:column;
     justify-content: center;
-
-    }
+}
 
 .cardFem{   
     background: #E7E3EF!important;
@@ -93,31 +87,28 @@ button.navbar-toggler{
     display:flex;
     flex-direction:column;
     justify-content: center;
-    
-    }
+}
 
-    .cardTitle{
-        display:flex;
-        justify-content: center;
-        width:auto;
-        margin:0 auto 30px auto;
-        background: #AEA0D0;
-        color:#ffffff;
-        text-align:center;
-        font-family: 'Montserrat';
-        border-radius: 10px;
-        padding:7px 7px 7px 7px;
-        font-weight:normal;
-        font-size:18px;
-    }
+.cardTitle{
+    display:flex;
+    justify-content: center;
+    width:auto;
+    margin:0 auto 30px auto;
+    background: #AEA0D0;
+    color:#ffffff;
+    text-align:center;
+    font-family: 'Montserrat';
+    border-radius: 10px;
+    padding:7px 7px 7px 7px;
+    font-weight:normal;
+    font-size:18px;
+}
 
-    .cardBody{
-        background: #E7E3EF;
-        border:0;
-        margin-top:30px;
-    }
-
-
+.cardBody{
+    background: #E7E3EF;
+    border:0;
+    margin-top:30px;
+}
 
 .form-group{
     width:100%!important;
@@ -134,9 +125,7 @@ button.navbar-toggler{
 
 .colInput{
     width:40%;
-    
 }
-
 
 label{
     width: 100%!important;
@@ -148,13 +137,12 @@ label{
     padding:10px 5px 10px 5px;
     font-weight:normal;
     font-size:13px;
-    
 }
+
 label.form-check-input{
     background:transparent!important;
     padding:0!important;
     color:#000000!important;
-
 }
 
 label.form-check-label{
@@ -166,7 +154,6 @@ input.form-check-input{
     position:relative;
     top:7px;
 }
-
 
 button[type=submit]{
     width:70px;
@@ -193,8 +180,8 @@ button[type=submit].red{
     padding:3px;
     font-weight:normal;
     font-size:11px;
- 
 }
+
 button[type=submit].red:hover{
     background: red!important;
     color:white;
@@ -211,13 +198,12 @@ button[type=submit].green{
     padding:3px;
     font-weight:normal;
     font-size:11px;
-
 }
+
 button[type=submit].green:hover{
     background:rgb(37, 115, 37)!important;
     color:white!important;
 }
-
 
 .form-control{
     width: 100%!important;
@@ -227,7 +213,6 @@ button[type=submit].green:hover{
     color:#000000;
     border:0;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
 }
 
 .form-control:focus {
@@ -240,16 +225,12 @@ button[type=submit].green:hover{
 input,select, button {
     font-family: 'Montserrat'!important; 
     font-size:13px;
-
 }
 
-
-
 .btnBox{
-display:flex;
-flex-direction: row;
-justify-content: center;
-
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 a button[type=submit].btnRegister{
@@ -266,8 +247,8 @@ a button[type=submit].btnRegister{
     background-position:left;
     background-position-x: 13px;;
     background-size: 25px;
-
 }
+
 a button[type=submit].btnRegister:hover{
     background: #6b2ff8;
     background-image: url("../img/plusIcon.png");
@@ -276,7 +257,6 @@ a button[type=submit].btnRegister:hover{
     background-position-x: 13px;;
     background-size: 25px;
 }
-
 
 a button[type=submit].btnLogin{
     width:130px;
@@ -289,11 +269,7 @@ a button[type=submit].btnLogin{
 }
 a button[type=submit].btnLogin:hover{
     background: #6b2ff8;
-
 }
-
-
-
 
 a.btnForgot{
     width:150px;
@@ -305,10 +281,10 @@ a.btnForgot{
     font-size:13px;
     text-decoration:none;
 }
+
 a.btnForgot:hover{
     background: #6b2ff8;
     color:#ffffff;
-
 }
 
 a button[type=reset].btnCancel{
@@ -325,7 +301,6 @@ a button[type=reset].btnCancel{
     background-position:left;
     background-position-x: 20px;;
     background-size: 25px;
-
 }
 
 a button[type=reset].btnCancel:hover{

@@ -151,3 +151,4 @@ To run the tests, execute the following command(s)
 - Profiling the design with CSS
 - Configure all the views
 - Add Drag and Drop for student photos
+- Fixing the send student's email 

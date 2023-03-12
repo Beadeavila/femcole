@@ -11,7 +11,7 @@
     <div class="studentCard">
         <img src="{{ asset($user->image) }}" alt="{{ $user->name }}" class="imageStudent">
 
-        <div class="infoStudent">
+        <div class="infoStudent" >
             <div>
                 <strong>Nombre y Apellidos:</strong>
                 {{ $user->name }} {{ $user->surname1 }} {{ $user->surname2 }}
@@ -23,6 +23,13 @@
             <div>
                 <strong>Email:</strong>
                 {{ $user->email }}
+            </div>
+            <div class="buttonContainer">
+                <a  href="{{ route('mail',$user->email) }}">
+                <button type="summit" name="summit" class="mailButton">
+                    <div class="textMailButton">Enviar Email</div>
+                </button>
+                </a>
             </div>
         </div>
     </div>

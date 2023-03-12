@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SendRating extends Mailable
+class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -49,6 +49,7 @@ class SendRating extends Mailable
     {
         return new Content(
             view: 'email'
+           
         );
     }
 

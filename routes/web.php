@@ -1,6 +1,6 @@
 <?php
 
-use App\Mail\SendRating;
+use App\Mail\SendMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -37,10 +37,10 @@ Route::post('/upload', [UserController::class], 'upload')->name('user.upload');
 
 
 
-Route::get('/mail', function () {
-    return new SendRating("");
-
-    /* $response = Mail::to('beadeavila10@gmail.com')->send(new SendRating("Chicas"));
-
-    dump($response); */
+Route::get('/mail/{id}', function ($email) {
+    
+    $response = Mail::to($email)->send(new SendMail('Chicas'));
+    return redirect()->route('users.index')
+            ->with('success', 'Email enviado correctamente');
+   
 })->name('mail');

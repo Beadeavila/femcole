@@ -18,52 +18,6 @@
                         <a class="btn btn-primary" href="{{ route('grades.index') }}"> Back</a>
                     </div>
                 </div>
-
-                    {{-- <div class="card-body">
-                        <div class="form-group">
-                            <strong>Alumno:</strong>
-                            {{ $grade->user->name }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Asignatura:</strong>
-                            {{ $grade->subject }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Trimestre:</strong>
-                            {{ $grade->trimester }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Examen:</strong>
-                            {{ $grade->exam }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Nota:</strong>
-                            {{ $grade->grade }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Curso escolar:</strong>
-                            {{ $grade->schoolYear }}
-                        </div>
-                    </div> --}}
-                {{-- <table>
-                    <thead class="tableHead">
-                        <tr>
-                            <th>Evaluación Final</th>
-                            <th>Asignatura</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($finalAverages as $subject => $trimesterAverages)
-                        <tr>
-                            <td>{{ $subject }}</td>
-                            @foreach ($trimesters as $trimester)
-                            <td>{{$trimesterAverages[$trimester]}}</td>
-                            @endforeach
-                            <td>{{ round(array_sum($trimesterAverages) / 3, 0) }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table> --}}
                 <div class="allT">
                     <table class="firstT box table-striped text-center">
                         <thead>

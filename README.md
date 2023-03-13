@@ -1,13 +1,13 @@
 # ![logoFemCole](https://user-images.githubusercontent.com/98114939/217543869-b37d30ae-92ac-406c-9f04-a1b94f3c198d.png)
 
 <h3 align="center"> 
-FemCole - an innovative app created to manage teacher's classes  👩‍🏫
+FemCole - an innovative app created to manage teachers' classes  👩‍🏫
 </h3
 
-A school required an app to manage teacher's classes and that's how FemCole was created. 
+A Spanish speaking school required an app to manage teachers' classes and that's how FemCole was created. 
 This innovative app allow for teachers watch a list of all of their students and student's grades for each trimester and exam.
 
-At the beggining of the school year, teachers can register their students on the app and then, students can log in using their email and password. This way, students only can watch their grades on their profile. If grades are lower than five they are gonna be red (fail), and if grades are alike or higher than five they are gonna be green (pass).
+At the beggining of the school year, teachers can register their students on the app and then, students can log in using their email and password. This way, students only can watch their grades on their profile. If grades are lower than five they are gonna be red (fail), and if grades are 10 they are gonna be purple (pass).
 
 Teachers also can register student's grades as the school year progress and watch the whole studdent's profile, averages included. Both students and grades can be edited or deleted by the theacher if it's necessary. 
 ***
@@ -86,7 +86,7 @@ You will need a text editor and perform the following steps:
 
 1. Clone the project
 ```bash
-  git clone https://github.com/Uxoa/femcole
+  git clone https://github.com/adrianaguilaruiz/femcole
 ```
 
 2. Go to the project directory
@@ -128,13 +128,12 @@ To run the tests, execute the following command(s)
 ```bash
   php artisan test
 ```
-<img width="393" alt="test_artisan_mvp" src="https://user-images.githubusercontent.com/98114939/217561019-46b00e8c-8c80-485f-99e9-6fe09010162e.png">
+<img width="320" alt="test_artisan_femcole" src="https://user-images.githubusercontent.com/98114939/220158966-6fab9310-f2a3-4598-8d96-c2e54af70b47.png">
 
 ```bash
   vendor/bin/phpunit tests
 ```
-
-<img width="449" alt="test_vendor_mvp" src="https://user-images.githubusercontent.com/98114939/217561187-eb99f8d3-c9df-4da9-8167-0efd9e556139.png">
+<img width="461" alt="test_vendor_femcole" src="https://user-images.githubusercontent.com/98114939/220159018-b764826d-6c54-4aba-b556-e97eb23a2272.png">
 
 ***
 
@@ -152,3 +151,4 @@ To run the tests, execute the following command(s)
 - Profiling the design with CSS
 - Configure all the views
 - Add Drag and Drop for student photos
+- Fixing the send student's email 

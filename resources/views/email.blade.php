@@ -7,6 +7,7 @@
         font-weigth:bold;
     }
     </style>
+    
 </head>
 <body>
     <h2> Saludos querida alumna, </h2>
